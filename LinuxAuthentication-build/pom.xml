@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>LinuxAuthentication</artifactId>
+        <groupId>org.imdc.authentication</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>LinuxAuthentication-build</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.imdc.authentication</groupId>
+            <artifactId>LinuxAuthentication-gateway</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.inductiveautomation.ignitionsdk</groupId>
+                <artifactId>ignition-maven-plugin</artifactId>
+                <version>1.0.8</version>
+
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>modl</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <projectScopes>
+                        <projectScope>
+                            <name>LinuxAuthentication-gateway</name>
+                            <scope>G</scope>
+                        </projectScope>
+                    </projectScopes>
+
+                    <moduleId>org.imdc.authentication.LinuxAuthentication</moduleId>
+                    <moduleName>${project.parent.name}</moduleName>
+                    <moduleDescription>${project.description}</moduleDescription>
+                    <moduleVersion>1.0.0</moduleVersion>
+                    <requiredIgnitionVersion>7.9.0</requiredIgnitionVersion>
+                    <requiredFrameworkVersion>7</requiredFrameworkVersion>
+
+                    <hooks>
+                        <hook>
+                            <scope>G</scope>
+                            <hookClass>org.imdc.authentication.GatewayHook</hookClass>
+                        </hook>
+                    </hooks>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

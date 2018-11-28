@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="LinuxAuthentication-build" />
+        <module name="LinuxAuthentication-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Linux Authentication" target="1.5" />
+      <module name="LinuxAuthentication-build" target="1.5" />
+      <module name="LinuxAuthentication-client" target="1.6" />
+      <module name="LinuxAuthentication-common" target="1.6" />
+      <module name="LinuxAuthentication-designer" target="1.6" />
+      <module name="LinuxAuthentication-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
